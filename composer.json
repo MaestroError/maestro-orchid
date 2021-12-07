@@ -1,0 +1,19 @@
+{
+    "name": "maestroerror/maestro-orchid",
+    "description": "Model based admin panel powered with laravel orchid package, by maestroerror",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Maestroerror\\MaestroOrchid\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "maestroerror",
+            "email": "revaz.gh@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^6.23"
+    }
+}
