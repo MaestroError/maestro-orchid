@@ -8,4 +8,8 @@ class Morchid {
         return is_null(config("morchid"));
     }
 
+    public static function routePrefix() {
+        return config("morchid.prefix", "morchid");
+    }
+
 }

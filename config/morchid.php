@@ -1,5 +1,5 @@
 <?php
 
 return [
-    "path" => "orchid"
+    "prefix" => "morchid"
 ];
