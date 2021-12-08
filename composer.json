@@ -4,7 +4,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Maestroerror\\MaestroOrchid\\": "src/"
+            "maestroerror\\MaestroOrchid\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "maestroerror\\MaestroOrchid\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -14,6 +19,14 @@
         }
     ],
     "require-dev": {
-        "orchestra/testbench": "^6.23"
+        "orchestra/testbench": "^6.23",
+        "phpunit/phpunit": "^9.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "maestroerror\\MaestroOrchid\\BaseServiceProvider"
+            ]
+        }
     }
 }
