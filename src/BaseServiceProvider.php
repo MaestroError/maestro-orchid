@@ -27,6 +27,7 @@ class BaseServiceProvider extends ServiceProvider {
         $this->loadViewsFrom(__DIR__."/../resources/views", "morchid");
 
         $this->registerRoutes();
+        $this->registerFacades();
     }
 
 
@@ -48,7 +49,13 @@ class BaseServiceProvider extends ServiceProvider {
 
     private function routeConfig() {
         return [
-            'prefix' => morchid::routePrefix(),
+            'prefix' => mOrchid::routePrefix()
         ];
+    }
+
+    protected function registerFacades() {
+        $this->app->singleton('morchid-singleton', function ($app) {
+            return new \maestroerror\MaestroOrchid\mOrchid();
+        });
     }
 }

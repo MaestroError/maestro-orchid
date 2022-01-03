@@ -2,7 +2,7 @@
 namespace maestroerror\MaestroOrchid\Console;
 
 use Illuminate\Console\Command;
-use maestroerror\MaestroOrchid\Morchid;
+use maestroerror\MaestroOrchid\mOrchid;
 
 class ProcessCommand extends command {
 
@@ -14,7 +14,7 @@ class ProcessCommand extends command {
         $this->info("Hello");
 
         // check if config file is published
-        if(Morchid::configNotPublished()) {
+        if(mOrchid::configNotPublished()) {
             return $this->warn("Please publish maestro-orchid config file 'php artisan vendor:publish --tag=morchid-config'");
         }
 
