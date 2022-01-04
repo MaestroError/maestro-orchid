@@ -5,6 +5,8 @@ namespace maestroerror\MaestroOrchid;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
+use maestroerror\MaestroOrchid\Facades\mOrchid;
+
 class BaseServiceProvider extends ServiceProvider {
     public function boot() {
 
@@ -26,8 +28,8 @@ class BaseServiceProvider extends ServiceProvider {
         // $this->loadMigrationsFrom(__DIR__."/../database/migrations");
         $this->loadViewsFrom(__DIR__."/../resources/views", "morchid");
 
-        $this->registerRoutes();
         $this->registerFacades();
+        $this->registerRoutes();
     }
 
 
@@ -54,7 +56,7 @@ class BaseServiceProvider extends ServiceProvider {
     }
 
     protected function registerFacades() {
-        $this->app->singleton('morchid-singleton', function ($app) {
+        $this->app->singleton('morchid_singleton', function ($app) {
             return new \maestroerror\MaestroOrchid\mOrchid();
         });
     }

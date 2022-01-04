@@ -2,7 +2,7 @@
 namespace maestroerror\MaestroOrchid\Console;
 
 use Illuminate\Console\Command;
-use maestroerror\MaestroOrchid\mOrchid;
+use maestroerror\MaestroOrchid\Facades\mOrchid;
 
 class ProcessCommand extends command {
 
