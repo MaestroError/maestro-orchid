@@ -39,6 +39,10 @@ class BaseServiceProvider extends ServiceProvider {
         $this->publishes([
             __DIR__."/../config/morchid.php" => config_path("morchid.php"),
         ], "morchid-config");
+        // publishes public service provider
+        $this->publishes([
+            __DIR__."/Console/stubs/morchidServiceProvider.stub" => app_path("Providers/morchidServiceProvider.php"),
+        ], "morchid-provider");
     }
 
     // register routes from routes file

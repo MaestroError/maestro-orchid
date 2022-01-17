@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use maestroerror\MaestroOrchid\Facades\mOrchid;
+
+class morchidServiceProvider extends ServiceProvider {
+
+    public function boot() {
+        mOrchid::fields($this->registerFields());
+    }
+
+    public function register() {
+
+    }
+
+    protected function registerFields() {
+        // registers new fields
+        return [
+
+        ];
+    }
+}
