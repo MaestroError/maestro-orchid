@@ -1,5 +1,10 @@
 <?php
 
 return [
-    "prefix" => "morchid"
+
+
+    "prefix" => "morchid",
+
+
+    "models_namespace" => "App\\mOrchid\\",
 ];

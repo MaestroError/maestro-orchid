@@ -1,7 +1,12 @@
 <?php
 
-use maestroerror\MaestroOrchid\Http\Controllers\testController;
+use maestroerror\MaestroOrchid\Facades\morchid;
 
-Route::view("test", "morchid::test");
-
-Route::get("controller", [testController::class, "index"]);
+Route::group(['prefix' => morchid::routePrefix()], function () {
+    // List route
+    Route::screen('list/{model}', modelListScreen::class)
+        ->name('morchid::platform.list');
+    // Edit route
+    Route::screen('edit/{model}/{id?}', modelEditScreen::class)
+        ->name('morchid::platform.edit');
+});

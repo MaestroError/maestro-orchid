@@ -28,5 +28,8 @@
                 "maestroerror\\MaestroOrchid\\BaseServiceProvider"
             ]
         }
+    },
+    "require": {
+        "orchid/platform": "^10.29"
     }
 }

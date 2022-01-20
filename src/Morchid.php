@@ -12,4 +12,12 @@ class mOrchid {
         return config("morchid.prefix", "morchid");
     }
 
+    public function ModelsNamespace() {
+        return config("morchid.models_namespace", "App\\mOrchid\\");
+    }
+
+    public function fields() {
+        // register fields
+    }
+
 }
