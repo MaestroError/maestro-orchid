@@ -1,6 +1,6 @@
 # maestro-orchid
 
-Administration panel auto generation solution created by (MaestroError)[https://www.linkedin.com/in/maestroerror/], Based on (Laravel Orchid Platform)[https://github.com/orchidsoftware/platform]
+Administration panel auto generation solution created by [MaestroError](https://www.linkedin.com/in/maestroerror/), Based on [Laravel Orchid Platform](https://github.com/orchidsoftware/platform)
 
 #### Next Steps
 
