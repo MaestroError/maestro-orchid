@@ -2,6 +2,8 @@
 
 namespace maestroerror\MaestroOrchid\Traits;
 
+use maestroerror\MaestroOrchid\Facades\morchid;
+
 use Illuminate\Support\Facades\Auth;
 
 trait baseTrait {
@@ -200,6 +202,8 @@ trait baseTrait {
 
         $this->listFields = $listFields;
 
+        $this->fieldsNamespace = morchid::FieldsNamespace();
+
     }
 
     // generates form from objectFields property
@@ -268,8 +272,8 @@ trait baseTrait {
     public function extraInfo() {
         $reflect = new \ReflectionClass($this);
         $extraInfo = [
-            "name" => $this->geoName,
-            "plural_name" => $this->geoNamePlural,
+            "name" => $this->mName,
+            "plural_name" => $this->mNamePlural,
             "obj" => $reflect->getShortName(),
             "add" => "დამატება",
             "update" => "განახლება",
@@ -390,10 +394,10 @@ trait baseTrait {
             $reqData['background_url'] = $videoUrl;
         }
 
-        // dd($reqData);
-        // $post->fill($reqData)->save();
+        // $post = $post->fill($reqData);
+        // create new object if not exists
         if(!isset($post->id)){
-            $post = $post::create([]);
+            $post = $post::create($reqData);
         }
 
         // gets calculated fields
@@ -429,7 +433,7 @@ trait baseTrait {
         }
         
 
-        return redirect()->route("platform.list", ["model" => $obj]);
+        return redirect()->route("morchid::list", ["model" => $obj]);
     }
 
     static function editScreenRemove($screen, $post, $mtmRelations = [], $alertObj = "\Orchid\Support\Facades\Alert") {
@@ -446,10 +450,11 @@ trait baseTrait {
         $alert = new $alertObj;
         $alert::info('თქვენ წარმატებით წაშალეთ '.$screen->extraInfo['name'].'');
 
-        return redirect()->route("platform.list", ["model" => $obj]);
+        return redirect()->route("morchid::list", ["model" => $obj]);
     }
 
     public function listScreenQuery($screen, $post) {
+        
         // Checking Orchid Permissions
         if(!Auth::user()->hasAccess($this->orchidPermissions)) {
             Throw new \Exception('No permission for model '.get_class($this));
@@ -509,7 +514,7 @@ trait baseTrait {
             $name = $this->extraInfo['edit'];
         }
         return \Orchid\Screen\Actions\Link::make($name)
-            ->route("platform.edit", ["model" => $obj, "id"=>$post->id]);
+            ->route("morchid::edit", ["model" => $obj, "id"=>$post->id]);
     }
     public function getFills() {
         return $this->fillable;

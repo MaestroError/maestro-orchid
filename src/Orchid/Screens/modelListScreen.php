@@ -59,7 +59,7 @@ class modelListScreen extends Screen
         return [
             Link::make($this->extraInfo['create_new'])
                 ->icon('pencil')
-                ->route("platform.edit", ["model" => $obj])
+                ->route("morchid::edit", ["model" => $obj])
         ];
     }
 

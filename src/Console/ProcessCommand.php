@@ -12,6 +12,17 @@ class ProcessCommand extends command {
     
     public function handle() {
         $this->info("Hello");
+        $tags = [
+            "morchid-config",
+            "morchid-provider",
+            "morchid-model"
+        ];
+        foreach ($tags as $tag) {
+            $params = [
+                '--tag' => $tag
+            ];
+            // $this->call('vendor:publish', $params);
+        }
 
         // check if config file is published
         if(mOrchid::configNotPublished()) {

@@ -21,6 +21,7 @@ class BaseServiceProvider extends ServiceProvider {
     public function register() {
         $this->commands([
             Console\ProcessCommand::class,
+            Console\listmodelCommand::class,
         ]);
     }
 
@@ -43,6 +44,10 @@ class BaseServiceProvider extends ServiceProvider {
         $this->publishes([
             __DIR__."/Console/stubs/morchidServiceProvider.stub" => app_path("Providers/morchidServiceProvider.php"),
         ], "morchid-provider");
+        // publishes example model
+        $this->publishes([
+            __DIR__."/../app/mOrchid/posts.php" => app_path("mOrchid/posts.php"),
+        ], "morchid-model");
     }
 
     // register routes from routes file

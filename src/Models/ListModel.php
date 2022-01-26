@@ -9,7 +9,7 @@ use Orchid\Attachment\Attachable;
 use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
 
-use App\Http\Traits\baseTrait;
+use maestroerror\MaestroOrchid\Traits\baseTrait;
 
 
 abstract class ListModel extends Model
@@ -25,4 +25,9 @@ abstract class ListModel extends Model
      * @var array
      */
     protected $allowedSorts = [];
+
+    public function __construct(array $attributes = []) {
+        parent::__construct($attributes);
+        $this->constructor();
+    }
 }

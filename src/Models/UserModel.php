@@ -11,7 +11,7 @@ use Orchid\Platform\Models\User as Authenticatable;
 // use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use Illuminate\Notifications\Notifiable;
 
-use App\Http\Traits\baseTrait;
+use maestroerror\MaestroOrchid\Traits\baseTrait;
 
 // use in your model if need attachments (relationship with orchid's uploaded files model)
 use Orchid\Attachment\Attachable;

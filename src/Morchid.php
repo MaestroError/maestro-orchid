@@ -16,6 +16,10 @@ class mOrchid {
         return config("morchid.models_namespace", "App\\mOrchid\\");
     }
 
+    public function FieldsNamespace() {
+        return config("morchid.fields_namespace", "Orchid\\Screen\\Fields\\");
+    }
+
     public function fields() {
         // register fields
     }

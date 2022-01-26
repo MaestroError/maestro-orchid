@@ -1,0 +1,57 @@
+<?php
+
+namespace App\mOrchid;
+
+use maestroerror\MaestroOrchid\Models\ListModel;
+
+use maestroerror\MaestroOrchid\Facades\mOrchid;
+
+class __NAME__ extends ListModel {
+
+    protected $table="model_table";
+    public $fillable = [
+        "fieldName",
+    ];
+
+    protected $name = "ListModel";
+    protected $namePlural = "ListModels";
+    
+    // Fields to calculate
+    public $calculatedFields = [];
+
+    // permission to check
+    public $orchidPermissions ="platform.index";
+
+
+    
+    // author or modified by column name
+    public $authorName = "";
+    // Title column name
+    public $titleName = "title";
+
+    
+    // Title column name
+    public $mainID = "id";
+    // Title column name
+    public $createdDateName = "created_at";
+    // Title column name
+    public $updatedDateName = "updated_at";
+
+
+    public $displayList = [
+        // "fieldName1",
+        // "fieldName2",
+        // "..."
+    ];
+
+    // fields for auto generation
+    protected $objectFields = [
+        "fieldName" => [
+            "title" => "Field Name",
+            "field" => "Input",
+            "placeholder" => "Enter field value",
+        ]
+    ];
+    
+    
+}

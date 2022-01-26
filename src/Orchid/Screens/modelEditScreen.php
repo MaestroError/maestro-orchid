@@ -117,7 +117,8 @@ class modelEditScreen extends Screen
                 ->class('btn-danger btn')
                 ->canSee($this->exists),
         ];
-        if (!empty($this->model->objectFields)){
+        
+        if (!empty($this->model)){
             $updateBtn = Button::make($this->extraInfo['update'])
             ->icon('note')
             ->method('createOrUpdate')
