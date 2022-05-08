@@ -19,6 +19,8 @@ Menu::make('Posts')
 ```
  *if you are not familiar with orchid platform, you can choose icons from [here](https://orchid.software/en/docs/icons/) easily*
 
+Note: your new list model needs table in DB with exact fields, which you added as keys in $objectFields property
+
 #### Next Steps
 
 
@@ -28,3 +30,20 @@ Menu::make('Posts')
 - test admin generation with mOrchid +
 - refactor baseTrait
 
+#### To Do
+
+- Review all command and comment them
+- Review main class and add comments
+- Review routes, resources and other needed codes, find out why you wrote this and comment them
+
+#### Issues
+
+- php artisan morchid:listmodel {modelname} Command creates file with lowercase
+
+##### State
+
+- Main codebase transferred
+- Main command created
+- Main 3 stabs created 
+- Routes are created 
+- Autogeneration of listModel started, it works!

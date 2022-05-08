@@ -15,6 +15,10 @@ class listmodelCommand extends command {
         $modelClassText = file_get_contents(__DIR__ . '/stubs/morchidListModel.stub');
         $name = strtolower($this->argument('name'));
         $newText = str_replace("__NAME__", $name, $modelClassText);
+        // make mOrchid folder
+        if(!file_exists(app_path("mOrchid/"))) {
+            mkdir(app_path("mOrchid/"));
+        }
         file_put_contents(app_path("mOrchid/".$name.".php"), $newText);
 
         if (file_exists(app_path("mOrchid/".$name.".php"))) {
